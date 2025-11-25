@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@import '@fontsource-variable/onest';
+
+@theme {
+  --color-primary: #3b82f6;
+  --font-display: "Inter", sans-serif;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  /* Corrige la línea incompleta */
+  font-family: 'Onest Variable', sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
