@@ -1,0 +1,81 @@
+---
+import SkillPill from './SkillPill.astro';
+import PythonIcon from '../icons/PythonIcon.astro';
+import BashIcon from '../icons/BashIcon.astro';
+import CPlusPlusIcon from '../icons/CPlusPlusIcon.astro';
+import LinuxIcon from '../icons/LinuxIcon.astro';
+import NetworkingIcon from '../icons/NetworkingIcon.astro';
+import GoIcon from '../icons/GoIcon.astro';
+import DockerIcon from '../icons/DockerIcon.astro';
+import AwsIcon from '../icons/AwsIcon.astro';
+import NextJSIcon from '../icons/NextJSIcon.astro';
+import ReactIcon from '../icons/ReactIcon.astro';
+
+const SKILLS = [
+  // Programming Languages
+  {
+    name: "Python",
+    icon: PythonIcon,
+    color: "cyan" as const
+  },
+  {
+    name: "C++",
+    icon: CPlusPlusIcon,
+    color: "cyan" as const
+  },
+  {
+    name: "Go",
+    icon: GoIcon,
+    color: "cyan" as const
+  },
+  {
+    name: "Bash",
+    icon: BashIcon,
+    color: "green" as const
+  },
+  {
+    name: "Linux Systems",
+    icon: LinuxIcon,
+    color: "green" as const
+  },
+  {
+    name: "Networking Knowledge",
+    icon: NetworkingIcon,
+    color: "green" as const
+  },
+  {
+    name: "Docker",
+    icon: DockerIcon,
+    color: "purple" as const
+  },
+  {
+    name: "AWS",
+    icon: AwsIcon,
+    color: "purple" as const
+  },
+  {
+    name: "Next.js",
+    icon: NextJSIcon,
+    color: "yellow" as const
+  },
+  {
+    name: "React",
+    icon: ReactIcon,
+    color: "yellow" as const
+  }
+];
+---
+
+<div class="max-w-5xl mx-auto px-4">
+  <div class="flex flex-wrap justify-center gap-3 md:gap-4">
+    {SKILLS.map((skill) => {
+      const Icon = skill.icon;
+      return (
+        <SkillPill color={skill.color}>
+          <Icon class="w-5 h-5 md:w-6 md:h-6" />
+          {skill.name}
+        </SkillPill>
+      );
+    })}
+  </div>
+</div>

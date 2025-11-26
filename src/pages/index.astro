@@ -5,20 +5,25 @@ import LinkedInIcon from '../icons/LinkedIn.astro';
 import GitHubIcon from '../icons/GitHub.astro';
 import SocialPill from '../components/SocialPill.astro';
 import MailIcon from '../icons/Mail.astro';
-import Experience from '../components/Experience.astro';
+/* import Experience from '../components/Experience.astro'; */
 import SectionContainer from '../components/SectionContainer.astro';
-import BriefcaseIcon from '../icons/Briefcase.astro';
+/* import BriefcaseIcon from '../icons/Briefcase.astro'; */
 import CodeIcon from '../icons/Code.astro';
 import Projects from '../components/Projects.astro';
+import BlogIcon from '../icons/Blog.astro';
+import TerminalIcon from '../icons/Terminal.astro';
+import TechSkills from '../components/TechSkills.astro';
+import CertificationIcon from '../icons/CertificationIcon.astro';
+import Certifications from '../components/Certifications.astro';
 ---
 
 <Layout title="Portfolio of varfmx21 - Developer & Cybersecurity Enthusiast"
 	description="Hire varfmx21, a passionate developer and cybersecurity enthusiast. Explore my portfolio showcasing projects, skills, and experience in the tech world.">
 	<main>
-		<SectionContainer class="py-44 pb-24">
+		<SectionContainer class="py-20 pb-4">
 			<img class="rounded-full w-18 h-18 mb-4" src="/varfmx21-photo.jpeg" alt="varfmx21 photo" />
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
-				Hola, soy varfmx21 <a
+				Hi, i'm varfmx21 <a
 				href="https://www.linkedin.com/in/luisvalde"
 				target="_blank"
 				rel="noopener"
@@ -29,7 +34,7 @@ import Projects from '../components/Projects.astro';
 			</h1>
 
 			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
-				+0 experience.<span class="text-yellow-200/90"> Computer Science Student and Enthusiast in Cybersecurity</span>. <span class="text-red-200/90">From Guadalajara, Mexico 🇲🇽</span>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet impedit cumque aliquid fugit temporibus fugiat itaque a adipisci voluptate iste tempora suscipit et, accusantium quae illo. Distinctio est natus eaque!
+				<span class="text-yellow-200/90"> Computer Science Student</span> on <span class="text-blue-300/90"> TEC de Monterrey</span> and Enthusiast in Cybersecurity</span>. <span class="text-red-200/90">From Guadalajara, Mexico 🇲🇽</span>. I love learning new things about cybersecurity, networking and cloud. 
 			</h2>
 
 			<nav class="flex gap-4 mt-8 flex-wrap">
@@ -48,13 +53,21 @@ import Projects from '../components/Projects.astro';
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer id="experience">
+		<SectionContainer id="tech-skills">
+            <h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center ">
+                <TerminalIcon class="size-8" />
+                Tech Skills
+            </h2>
+			<TechSkills />
+        </SectionContainer>
+		
+		<!-- <SectionContainer id="experience">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
 				<BriefcaseIcon class="size-8" />
 				Experience
 			</h2>
 			<Experience />
-		</SectionContainer>
+		</SectionContainer> -->
 		
 		<SectionContainer id="projects">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
@@ -62,6 +75,22 @@ import Projects from '../components/Projects.astro';
 				Projects
 			</h2>
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="blog">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<BlogIcon class="size-8" />
+				Blog - hacking tutorials and more
+			</h2>
+			<p class="text-gray-300">Coming soon...</p>
+		</SectionContainer>
+
+		<SectionContainer id="certifications">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<CertificationIcon class="size-8" />
+				Certifications
+			</h2>
+			<Certifications />
 		</SectionContainer>
 	</main>
 </Layout>

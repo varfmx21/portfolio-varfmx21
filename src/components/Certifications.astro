@@ -1,0 +1,72 @@
+---
+import CiscoIcon from "../icons/CiscoIcon.astro"
+
+const TAGS = {
+    CISCO: {
+        name: "Cisco",
+        class: "bg-blue-500/20 text-blue-200",
+        icon: CiscoIcon
+    },
+    ORACLE: {
+        name: "Oracle",
+        class: "bg-red-500/20 text-red-200",
+        icon: CiscoIcon
+    }
+}
+
+const CERTIFICATIONS = [
+    {
+        title: "Introduction to Cybersecurity - Cisco",
+        date: "June 2025",
+        link: "https://www.credly.com/badges/699b7b40-0ba1-47ec-8d3f-66311bed557f/public_url",
+        image: 'introduction-to-cybersecurity.webp',
+        tags: [TAGS.CISCO]
+    },
+    {
+        title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+        date: "October 2027",
+        link: "https://www.credly.com/badges/3c0b1f1d-3f6a-4f6a- ninety-nine 8d7a-2a7f6e6b1a4e/public_url",
+        image: 'oracle_ai.webp',
+        tags: [TAGS.ORACLE]
+    }
+]
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+        CERTIFICATIONS.map((cert) => (
+            <div class="p-4 bg-white/5 rounded-lg hover:bg-white/10 transition group">
+                <img 
+                    src={cert.image} 
+                    alt={cert.title} 
+                    class="w-full h-40 object-cover rounded-md mb-3 group-hover:scale-105 transition" 
+                />
+                <h3 class="text-lg font-semibold mb-2 text-yellow-200/90">{cert.title}</h3>
+                <p class="text-sm text-gray-400 mb-3">{cert.date}</p>
+                <div class="flex flex-wrap gap-2 mb-3">
+                    {
+                        cert.tags.map((tag) => {
+                            const TagIcon = tag.icon;
+                            return (
+                                <span class={`inline-flex items-center gap-x-1.5 rounded-full px-2.5 py-1 text-xs font-medium ${tag.class}`}>
+                                    <TagIcon class="w-3 h-3" />
+                                    {tag.name}
+                                </span>
+                            )
+                        })
+                    }
+                </div>
+                {cert.link && (
+                    <a 
+                        href={cert.link} 
+                        class="inline-flex w-full rounded-full border border-white/10 justify-center items-center gap-x-2 py-1.5 px-3 bg-white/5 hover:scale-105 hover:bg-white/10 transition text-gray-300 font-medium text-xs"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        View Certificate
+                    </a>
+                )}
+            </div>
+        ))
+    }
+</div>
