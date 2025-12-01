@@ -1,5 +1,6 @@
 ---
 import CiscoIcon from "../icons/CiscoIcon.astro"
+import LinuxIcon from "../icons/LinuxIcon.astro";
 
 const TAGS = {
     CISCO: {
@@ -11,10 +12,27 @@ const TAGS = {
         name: "Oracle",
         class: "bg-red-500/20 text-red-200",
         icon: CiscoIcon
+    },
+    LINUX: {
+        name: "Linux",
+        class: "bg-green-500/20 text-green-200",
+        icon: LinuxIcon
+    },
+    LOL: {
+        name: "4710-4271-1449-3355",
+        class: "bg-yellow-500/20 text-yellow-200",
+        icon: LinuxIcon
     }
 }
 
 const CERTIFICATIONS = [
+    {
+        title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
+        date: "October 2025",
+        link: "https://www.credly.com/badges/3c0b1f1d-3f6a-4f6a- ninety-nine 8d7a-2a7f6e6b1a4e/public_url",
+        image: 'oracle_ai.webp',
+        tags: [TAGS.ORACLE]
+    },
     {
         title: "Introduction to Cybersecurity - Cisco",
         date: "June 2025",
@@ -23,11 +41,18 @@ const CERTIFICATIONS = [
         tags: [TAGS.CISCO]
     },
     {
-        title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
-        date: "October 2027",
-        link: "https://www.credly.com/badges/3c0b1f1d-3f6a-4f6a- ninety-nine 8d7a-2a7f6e6b1a4e/public_url",
-        image: 'oracle_ai.webp',
-        tags: [TAGS.ORACLE]
+        title: "Curso de Personalización de Linux",
+        date: "June 2025",
+        link: "https://hack4u.io/check-certificate/",
+        image: 'certificado-hack4u-linux.webp',
+        tags: [TAGS.LINUX, TAGS.LOL]
+    },
+    {
+        title: "Participation on HackMTY 2025",
+        date: "May 2025",
+        link: "",
+        image: 'HackMTY2024.webp',
+        tags: []
     }
 ]
 ---
@@ -63,7 +88,7 @@ const CERTIFICATIONS = [
                         target="_blank" 
                         rel="noopener noreferrer"
                     >
-                        View Certificate
+                        Verify Certificate
                     </a>
                 )}
             </div>
