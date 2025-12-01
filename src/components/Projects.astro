@@ -15,6 +15,7 @@ import PostgresqlIcon from "../icons/PostgresqlIcon.astro"
 import { baseService } from "astro/assets"
 import BashIcon from "../icons/BashIcon.astro"
 import AstroIcon from "../icons/AstroIcon.astro"
+import CicdIcon from "../icons/CicdIcon.astro"
 
 const TAGS = {
     TAILWIND: {
@@ -86,6 +87,11 @@ const TAGS = {
         name: "Astro",
         class: "bg-blue-300/20 text-blue-200",
         icon: AstroIcon
+    },
+    CICD: {
+        name: "CI/CD",
+        class: "bg-green-300/20 text-green-200",
+        icon: CicdIcon
     }
 }
 
@@ -100,13 +106,13 @@ const PROJECTS = [
         tags: [TAGS.LINUX, TAGS.NETWORKING]
     },
     {
-        title: "Personal Portfolio Website",
-        description: "A personal portfolio website built with Astro to showcase my projects and skills. Deployed in my home lab with docker in a raspberry pi 5 with Ubuntu Server on Cloudflare Tunnel and integrating CI/CD pipeline with Github Actions.",
+        title: "CI/CD Automated Portfolio Deployment",
+        description: "I implemented a complete automated deployment pipeline using GitHub Actions, Docker, and Docker Hub. The site, built with Astro, runs in a self-hosted environment (Raspberry Pi 5 with Ubuntu Server) and updates automatically through Watchtower and Cloudflare Tunnel. This project showcases skills in infrastructure, containerization, automation, and continuous deployment in real-world environments.",
         date: "November, 2025",
         link: "https://blog.v4lde.tech/",
         github: "https://github.com/varfmx21/portfolio-varfmx21",
         image: '829shots_so.webp',
-        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.DOCKER, TAGS.CLOUDFARE, TAGS.GITHUB]
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.DOCKER, TAGS.CLOUDFARE, TAGS.GITHUB, TAGS.CICD]
     },
     {
         title: "Brute Force Workshop Lab",
@@ -191,7 +197,7 @@ const PROJECTS = [
                             target="_blank" 
                             rel="noopener noreferrer"
                         >
-                            <GitHubIcon class="w-3 h-3" />
+                            <GitHubIcon class={`w-3 h-3 ${project.title === "CI/CD Automated Portfolio Deployment" ? "scale-50" : ""}`} />
                             GitHub
                         </a>
                     )}
