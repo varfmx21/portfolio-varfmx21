@@ -12,6 +12,9 @@ import TypeScriptIcon from "../icons/TypeScriptIcon.astro"
 import SupabaseIcon from "../icons/SupabaseIcon.astro"
 import NextJSIcon from "../icons/NextJSIcon.astro"
 import PostgresqlIcon from "../icons/PostgresqlIcon.astro"
+import { baseService } from "astro/assets"
+import BashIcon from "../icons/BashIcon.astro"
+import AstroIcon from "../icons/AstroIcon.astro"
 
 const TAGS = {
     TAILWIND: {
@@ -68,6 +71,21 @@ const TAGS = {
         name: "PostgreSQL",
         class: "bg-blue-800/20 text-blue-200",
         icon: PostgresqlIcon
+    },
+    BASH: {
+        name: "Bash",
+        class: "bg-gray-700/20 text-gray-300",
+        icon: BashIcon
+    },
+    GITHUB: {
+        name: "GitHub Actions",
+        class: "bg-purple-500/20 text-purple-200",
+        icon: GitHubIcon
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-blue-300/20 text-blue-200",
+        icon: AstroIcon
     }
 }
 
@@ -78,17 +96,17 @@ const PROJECTS = [
         date: "Ongoing...",
         link: "https://www.linkedin.com/company/pawnguard",
         github: "",
-        image: '',
+        image: '417shots_so.webp',
         tags: [TAGS.LINUX, TAGS.NETWORKING]
     },
     {
         title: "Personal Portfolio Website",
-        description: "A personal portfolio website built with Astro to showcase my projects and skills. This one is from a tutorial of Dimudev and customized by me. Deployed in my home lab with docker in a raspberry pi 5 with Ubuntu Server on Cloudflare Tunnel.",
+        description: "A personal portfolio website built with Astro to showcase my projects and skills. Deployed in my home lab with docker in a raspberry pi 5 with Ubuntu Server on Cloudflare Tunnel and integrating CI/CD pipeline with Github Actions.",
         date: "November, 2025",
         link: "https://blog.v4lde.tech/",
         github: "https://github.com/varfmx21/portfolio-varfmx21",
         image: '829shots_so.webp',
-        tags: [TAGS.TAILWIND, TAGS.DOCKER, TAGS.CLOUDFARE]
+        tags: [TAGS.ASTRO, TAGS.TAILWIND, TAGS.DOCKER, TAGS.CLOUDFARE, TAGS.GITHUB]
     },
     {
         title: "Brute Force Workshop Lab",
@@ -100,13 +118,13 @@ const PROJECTS = [
         tags: [TAGS.NETWORKING, TAGS.DOCKER, TAGS.LINUX, TAGS.CISCO]
     },
     {
-        title: "ShulkerHouse - In&Out Mobile App",
-        description: "I developed a cross-platform mobile app using React Native and TypeScript to digitalize donation and delivery processes for Banco de Alimentos de Guadalajara, implemented secure input validation and sanitization following OWASP Top 10 practices, and collaborated on encryption mechanisms with Supabase Auth to protect user privacy and data integrity.",
-        date: "September, 2025",
+        title: "autoHyprland - Automated Hyprland Setup Script",
+        description: "I developed a Bash script to automate the installation and configuration of Hyprland for hackers, a dynamic tiling window manager for Linux. The script streamlines the setup process by installing necessary dependencies, configuring system settings, and applying user preferences, making it easier for users to get started with Hyprland.",
+        date: "October, 2025",
         link: "",
-        github: "https://github.com/JRV-XVI/in-and-out",
-        image: '252shots_so.webp',
-        tags: [TAGS.REACT, TAGS.TYPESCRIPT, TAGS.SUPABASE]
+        github: "https://github.com/varfmx21/autoHyprland",
+        image: '285shots_so.webp',
+        tags: [TAGS.BASH, TAGS.LINUX]
     },
     {
         title: "CORENET - Network Infrastructure Reengineering",
@@ -123,7 +141,7 @@ const PROJECTS = [
         date: "March, 2025",
         link: "",
         github: "https://github.com/JRV-XVI/connect-the-schools",
-        image: '',
+        image: '747shots_so.webp',
         tags: [TAGS.NEXTJS, TAGS.TYPESCRIPT, TAGS.POSTGRESQL]
     }
 ]

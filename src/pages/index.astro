@@ -5,9 +5,9 @@ import LinkedInIcon from '../icons/LinkedIn.astro';
 import GitHubIcon from '../icons/GitHub.astro';
 import SocialPill from '../components/SocialPill.astro';
 import MailIcon from '../icons/Mail.astro';
-/* import Experience from '../components/Experience.astro'; */
+import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
-/* import BriefcaseIcon from '../icons/Briefcase.astro'; */
+import BriefcaseIcon from '../icons/Briefcase.astro';
 import CodeIcon from '../icons/Code.astro';
 import Projects from '../components/Projects.astro';
 import BlogIcon from '../icons/Blog.astro';
@@ -61,20 +61,20 @@ import Certifications from '../components/Certifications.astro';
 			<TechSkills />
         </SectionContainer>
 		
-		<!-- <SectionContainer id="experience">
-			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
-				<BriefcaseIcon class="size-8" />
-				Experience
-			</h2>
-			<Experience />
-		</SectionContainer> -->
-		
 		<SectionContainer id="projects">
 			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
 				<CodeIcon class="size-8" />
 				Projects
 			</h2>
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+				<BriefcaseIcon class="size-8" />
+				Hackatons & CTF's
+			</h2>
+			<Experience />
 		</SectionContainer>
 
 		<SectionContainer id="blog">
