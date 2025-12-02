@@ -1,6 +1,8 @@
 ---
 import CiscoIcon from "../icons/CiscoIcon.astro"
 import LinuxIcon from "../icons/LinuxIcon.astro";
+import PythonIcon from "../icons/PythonIcon.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
 
 const TAGS = {
     CISCO: {
@@ -22,6 +24,16 @@ const TAGS = {
         name: "4710-4271-1449-3355",
         class: "bg-yellow-500/20 text-yellow-200",
         icon: LinuxIcon
+    },
+    PYTHON: {
+        name: "Python",
+        class: "bg-cyan-500/20 text-cyan-200",
+        icon: PythonIcon
+    },
+    GITHUB: {
+        name: "GitHub & Git",
+        class: "bg-gray-500/20 text-gray-200",
+        icon: GithubIcon
     }
 }
 
@@ -52,6 +64,27 @@ const CERTIFICATIONS = [
         date: "May 2025",
         link: "",
         image: 'HackMTY2024.webp',
+        tags: []
+    },
+    {
+        title: "Version Control - Meta",
+        date: "August 2024",
+        link: "https://coursera.org/share/1d9957cb0b81fdf1f853982e2b19ba0e",
+        image: 'version-control.webp',
+        tags: [TAGS.GITHUB]
+    },
+    {
+        title: "Programming in Python - Meta",
+        date: "July 2024",
+        link: "https://coursera.org/share/6d1405da4901595a6f91ec13fd04ef5b",
+        image: 'python-meta.webp',
+        tags: [TAGS.PYTHON]
+    },
+    {
+        title: "Introduction to Back-End Development - Meta",
+        date: "June 2024",
+        link: "https://coursera.org/share/40279cc396fa5cd22c55bd83f44931a8",
+        image: 'intro-backend-meta.webp',
         tags: []
     }
 ]
