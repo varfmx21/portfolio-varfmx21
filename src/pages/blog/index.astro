@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionContainer from '../../components/SectionContainer.astro';
+import BlogIcon from '../../icons/Blog.astro';
+import BlogPosts from '../../components/BlogPosts.astro';
+---
+
+<Layout 
+  title="Blog - varfmx21"
+  description="Artículos sobre ciberseguridad, desarrollo y tecnología por varfmx21"
+>
+  <main>
+    <SectionContainer class="py-20 pb-10">
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+        <BlogIcon class="size-10 md:size-12" />
+        Blog
+      </h1>
+      <p class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <span class="text-yellow-200/90">¡Bienvenido al blog!</span> Donde encontraras articulos de <span class="text-green-200/90">ciberseguridad</span>, <span class="text-blue-200/90">networking</span> y <span class="text-purple-200/90">desarrollo web</span>.
+      </p>
+    </SectionContainer>
+
+    <SectionContainer id="posts">
+      <BlogPosts />
+    </SectionContainer>
+  </main>
+</Layout>

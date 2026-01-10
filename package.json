@@ -11,7 +11,7 @@
   "dependencies": {
     "@fontsource-variable/onest": "^5.2.11",
     "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.16.0",
+    "astro": "^5.16.8",
     "tailwindcss": "^4.1.17"
   }
 }
