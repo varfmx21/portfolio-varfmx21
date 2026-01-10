@@ -1,0 +1,63 @@
+---
+import { getCollection } from 'astro:content';
+
+const allBlogPosts = await getCollection('blog');
+
+const sortedPosts = allBlogPosts.sort((a, b) => 
+  b.data.date.getTime() - a.data.date.getTime()
+);
+---
+
+<div class="grid grid-cols-1 md:grid-cols-1 gap-6">
+    {
+        sortedPosts.map((post) => (
+            <div class="p-4 bg-white/5 rounded-lg hover:bg-white/10 transition group">
+                {post.data.image && (
+                    <img 
+                        src={post.data.image} 
+                        alt={post.data.title} 
+                        class="w-full h-48 object-cover rounded-md mb-3 group-hover:scale-105 transition" 
+                        loading="lazy"
+                    />
+                )}
+                <h3 class="text-lg font-semibold mb-2 text-yellow-200/90">{post.data.title}</h3>
+                <div class="flex items-center gap-4 text-xs text-gray-400 mb-2">
+                    {post.data.author && <span>Por {post.data.author}</span>}
+                    <time datetime={post.data.date.toISOString()}>
+                        {post.data.date.toLocaleDateString('es-ES', { 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                        })}
+                    </time>
+                </div>
+                {post.data.description && (
+                    <p class="text-sm text-gray-300 mb-3">{post.data.description}</p>
+                )}
+                {post.data.tags && post.data.tags.length > 0 && (
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        {post.data.tags.map((tag) => (
+                            <span class="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400">
+                                #{tag}
+                            </span>
+                        ))}
+                    </div>
+                )}
+                <div class="flex gap-2">
+                    <a 
+                        href={`/blog/${post.slug}`} 
+                        class="flex-1 inline-flex rounded-full border border-white/10 justify-center items-center gap-x-1.5 py-1.5 px-3 bg-white/5 hover:scale-105 hover:bg-white/10 transition text-gray-300 font-medium text-xs"
+                    >
+                        Leer artículo
+                    </a>
+                </div>
+            </div>
+        ))
+    }
+</div>
+
+{sortedPosts.length === 0 && (
+    <div class="text-center py-12">
+        <p class="text-gray-400 text-lg">No hay posts publicados aún.</p>
+    </div>
+)}

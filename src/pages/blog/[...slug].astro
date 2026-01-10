@@ -1,0 +1,23 @@
+---
+// src/pages/blog/[...slug].astro
+import { getCollection } from 'astro:content';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+
+// 1. Genera las rutas estáticas para cada post del blog
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+// 2. Obtén los datos del post actual
+const { entry } = Astro.props;
+// 3. Renderiza el contenido a un componente <Content />
+const { Content } = await entry.render();
+---
+
+<!-- 4. Envuelve el contenido en tu Layout (Template Base) -->
+<BlogLayout frontmatter={entry.data}>
+  <Content />
+</BlogLayout>

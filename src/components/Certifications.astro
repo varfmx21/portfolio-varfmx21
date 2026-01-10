@@ -3,6 +3,7 @@ import CiscoIcon from "../icons/CiscoIcon.astro"
 import LinuxIcon from "../icons/LinuxIcon.astro";
 import PythonIcon from "../icons/PythonIcon.astro";
 import GithubIcon from "../icons/GithubIcon.astro";
+import BashIcon from "../icons/BashIcon.astro";
 
 const TAGS = {
     CISCO: {
@@ -25,6 +26,11 @@ const TAGS = {
         class: "bg-yellow-500/20 text-yellow-200",
         icon: LinuxIcon
     },
+    LOL1: {
+        name: "2589-2834-4178-3359",
+        class: "bg-yellow-500/20 text-yellow-200",
+        icon: LinuxIcon
+    },
     PYTHON: {
         name: "Python",
         class: "bg-cyan-500/20 text-cyan-200",
@@ -34,10 +40,22 @@ const TAGS = {
         name: "GitHub & Git",
         class: "bg-gray-500/20 text-gray-200",
         icon: GithubIcon
+    },
+    BASH: {
+        name: "Bash",
+        class: "bg-green-500/20 text-green-200",
+        icon: BashIcon
     }
 }
 
 const CERTIFICATIONS = [
+    {
+        title: "Introducción a Linux - Hack4u",
+        date: "December 2025",
+        link: "https://hack4u.io/check-certificate/",
+        image: 'CT_luis_fernando_valderrabano.webp',
+        tags: [TAGS.BASH, TAGS.LINUX, TAGS.LOL1]
+    },
     {
         title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate",
         date: "October 2025",
@@ -53,7 +71,7 @@ const CERTIFICATIONS = [
         tags: [TAGS.CISCO]
     },
     {
-        title: "Curso de Personalización de Linux",
+        title: "Personalización de Linux - Hack4u",
         date: "June 2025",
         link: "https://hack4u.io/check-certificate/",
         image: 'certificado-hack4u-linux.webp',
