@@ -1,3 +1,23 @@
+# Docker reinstalls dependencies fresh inside the container
+node_modules/
+
+# Old build output — rebuilt inside the container
+dist/
+
+# Version control
+.git/
+.gitignore
+
+# Never bake secrets into an image layer
+.env
+.env.*
+.env.local
+
+# Docker files themselves
+Dockerfile
+.dockerignore
+
+# Logs and editor noise
+*.log
+npm-debug.log*
 .DS_Store
-node_modules
-dist
