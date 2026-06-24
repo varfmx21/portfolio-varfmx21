@@ -17,14 +17,14 @@ jobs:
       uses: docker/login-action@v3
       with:
         registry: ${{ secrets.OCI_REGION }}.ocir.io
-        username: ${{ secrets.OCI_REGION }}/${{ secrets.OCI_USERNAME }}
+        username: ${{ secrets.OCI_USERNAME }}
         password: ${{ secrets.OCI_AUTH_TOKEN }}
 
     - name: Docker metadata
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: ${{ secrets.OCI_REGION }}.ocir.io/${{ secrets.OCI_TENANCY }}/${{ secrets.OCI_REPOSITORY }}
+        images: ${{ secrets.OCI_REGION }}.ocir.io/axpqjhfdooxb/varfmx/portfolio-nginx
         tags: type=sha,format=short,prefix=sha-
 
     - name: Build and Push
