@@ -1,0 +1,19 @@
+services:
+  web-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV:test
+
+  playwright-runner:
+    image: mcr.microsoft.com/playwright:v1.61.1-noble
+    working_dir: /work 
+    volumes:
+      - .:/work
+      - /work/node_modules
+    environment:
+      - BASE_URL=http://web-app:8080
+    depends_on:
+      - web-app
+    command: sh -c "npm ci && npx playwright test"
