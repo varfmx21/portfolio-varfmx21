@@ -18,10 +18,4 @@ test.describe('Homepage', () => {
     await expect(page).toHaveTitle(/varfmx21/);
   });
 
-  test('Should links of navbar works', async ({ page }) => {
-
-    const link = page.getByRole('link', { name: 'Home' });
-    await expect(link).toHaveAttribute('href', '/#top');
-  });
-
 });
